@@ -22,6 +22,8 @@ public class HomePage {
 	
 	@FindBy(linkText = "Campaigns")
 	private WebElement campaignsLink;
+	@FindBy(linkText = "Products")
+	private WebElement productLink;
 	
 	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']")
 	private WebElement profileIcon;
@@ -51,6 +53,9 @@ public class HomePage {
 
 	public WebElement getCampaignsLink() {
 		return campaignsLink;
+	}
+	public WebElement getProductLink() {
+		return productLink;
 	}
 	public void logout() {
 		Actions action = new Actions(driver);
