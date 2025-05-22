@@ -45,8 +45,9 @@ public class BaseClass {
 	//@Parameters("BROWSER")
 	@BeforeClass(groups = {"smokeTest" , "regressionTest"})
 	public void configureBc() throws Throwable {
-		String BROWSER = flib.getDataFromPropertiesFile("browser");
+		//String BROWSER = flib.getDataFromPropertiesFile("browser");
 		//String BROWSER = browser;
+		String BROWSER = System.getProperty("browser", flib.getDataFromPropertiesFile("browser"));
 		if(BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
 		} else if(BROWSER.equals("firefox")){
